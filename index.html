@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- 替換為 p5.js 1.10.0 CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <!-- 引入 ml5.js (HandPose 等影像辨識功能) -->
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 首頁 (Landing Page) 覆蓋層 -->
+    <div id="landing-page">
+      <div class="landing-content">
+        <h1 id="typewriter-text" class="typewriter"></h1>
+        
+        <div id="landing-details" class="fade-hidden">
+          <p class="desc">這是一個結合 AI 影像辨識的互動式急救教學平台。<br>透過鏡頭，我們將帶領你學習遇到常見意外時的正確處理步驟！</p>
+          
+          <div class="gesture-guide">
+            <h3>✋ 手勢操作全指南</h3>
+            <ul>
+              <li><strong>左手 👌 (OK)</strong>：教學回上一步</li>
+              <li><strong>右手 👌 (OK)</strong>：教學去下一步</li>
+              <li><strong>雙手 👌 (OK)</strong>：關閉教學視窗</li>
+              <li><strong>🫰 手指愛心</strong>：實戰演練失敗時滿血重來</li>
+              <li><strong>🤘 搖滾手勢</strong>：退出實戰演練 / 返回初始畫面</li>
+            </ul>
+          </div>
+          
+          <button id="start-btn" onclick="startApp()">🚀 開始探索</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右上角按鈕區 -->
+    <div id="top-right-buttons">
+      <button id="btn-practice" class="top-btn" onclick="togglePracticeMode()">實戰演練</button>
+      <button id="btn-jumper" class="top-btn" onclick="toggleJumper()">跳躍小人</button>
+    </div>
+
+    <!-- 頂部醫療插圖與標題 -->
+    <header id="main-header">
+      <h1>🏥 醫療小天才養成記 🚑</h1>
+      <p>學習基礎急救知識，跟著鏡頭一起動動手！👨‍⚕️👩‍⚕️</p>
+    </header>
+
+    <div id="app-container">
+      <!-- 左側選單欄 -->
+      <aside id="sidebar">
+        <button class="level-btn" onclick="openPopup(0)">一般擦傷</button>
+        <button class="level-btn" onclick="openPopup(1)">輕度燙傷</button>
+        <button class="level-btn" onclick="openPopup(2)">急性扭傷</button>
+        <button class="level-btn" onclick="openPopup(3)">異物刺傷</button>
+        <button class="level-btn" onclick="openPopup(4)">猛烈流鼻血</button>
+        <button class="level-btn" onclick="openPopup(5)">昆蟲螫傷</button>
+        
+        <!-- 手勢提示區 -->
+        <div id="sidebar-instructions">
+          <p>✋ <strong>手勢操作提示</strong></p>
+          <ul>
+            <li><strong>左邊手 OK</strong>：上一步</li>
+            <li><strong>右邊手 OK</strong>：下一步</li>
+            <li><strong>雙　手 OK</strong>：關閉視窗</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- 攝影機畫面容器 -->
+      <main id="canvas-container"></main>
+
+      <!-- 右側滑入白底黑字說明框 -->
+      <div id="instruction-popup" class="hidden">
+        <button id="close-btn" onclick="closePopup()">✖</button>
+        <div id="popup-content"></div>
+        <div id="popup-controls">
+          <button id="prev-btn" onclick="prevPage()">⬅ 上一步</button>
+          <span id="page-indicator">1 / 1</span>
+          <button id="next-btn" onclick="nextPage()">下一步 ➡</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="sketch.js"></script>
+    
+    <!-- 首頁打字機與過渡動畫腳本 -->
+    <script>
+      const titleText = "🏥 歡迎來到 醫療小天才養成記 🚑";
+      let charIndex = 0;
+      
+      function typeWriter() {
+        if (charIndex < titleText.length) {
+          document.getElementById("typewriter-text").innerHTML += titleText.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeWriter, 120); // 打字速度，數字越小越快
+        } else {
+          // 打字完成後，淡入顯示下方說明與按鈕
+          document.getElementById("landing-details").classList.add("fade-visible");
+        }
+      }
+      
+      function startApp() {
+        const landing = document.getElementById("landing-page");
+        landing.style.opacity = '0'; // 觸發 CSS 消失動畫
+        setTimeout(() => { landing.style.display = 'none'; }, 800); // 動畫結束後隱藏 DOM
+      }
+      
+      // 網頁載入後延遲半秒開始打字機效果
+      setTimeout(typeWriter, 500);
+    </script>
+  </body>
+</html>
