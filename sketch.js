@@ -295,6 +295,9 @@ let playedScenarios = []; // 紀錄已經玩過的關卡，達成成就用
 let practiceProgress = 0; // 進度條百分比 (0~100)
 let stepCompleteDelay = 0; // 步驟完成後的文字停留延遲計時
 let isAngleWrong = false; // 紀錄異物刺傷的拔除角度是否歪掉
+let isPracticeCompleted = false; // 實戰演練是否完成
+let isRunningCompleted = false; // 奔跑小人是否完成
+let isRunningPerfect = false; // 奔跑小人是否全對
 
 // --- 實戰演練進階變數 ---
 let stepReady = true; // 防跳格鎖，確保每個步驟間有過渡延遲
@@ -325,9 +328,11 @@ function setup() {
   video = createCapture(VIDEO); // 取得攝影機影像
   video.hide(); 
   
-  // 啟動手部辨識模型並將結果存入 hands 陣列 (移至 setup 避免阻擋攝影機啟動)
-  handPose = ml5.handPose();
-  handPose.detectStart(video, gotHands);
+  // 啟動手部辨識模型，並在「模型背景載入完成後」才開始擷取手勢
+  handPose = ml5.handPose(function() {
+    console.log("手部辨識模型載入完成！");
+    handPose.detectStart(video, gotHands);
+  });
 
   // 初始化按鈕文字
   let btnJumper = document.getElementById('btn-jumper');
@@ -343,6 +348,17 @@ function gotHands(results) {
 
 function draw() {
   background('#e0f7fa'); // 繪製淡藍色背景
+  
+  // 檢查鏡頭是否載入完成，若尚未載入，顯示提示文字並暫停後續的遊戲邏輯
+  if (!video || !video.loadedmetadata || video.width === 0 || video.height === 0) {
+    fill(0, 120, 180);
+    noStroke();
+    textSize(32);
+    textAlign(CENTER, CENTER);
+    text("鏡頭載入中...", width / 2, height / 2);
+    return;
+  }
+
   imageMode(CENTER); // 設定影像對齊模式為「中心點對齊」
   
   push(); // 儲存目前的座標系統設定
@@ -1023,15 +1039,20 @@ function drawRunningGame(consistentGesture, currentGestures) {
 
   let q = runGame.selectedQuestions[runGame.currentQIndex];
   if (!q || runGame.state === "GAME_WON") {
+     isRunningCompleted = true;
+     if (runGame.score === 60) isRunningPerfect = true; // 6題全對(60分)獲得成就
+
      fill(255, 240);
      rectMode(CENTER);
-     rect(width/2, height/2, 600, 200, 15);
-     fill(0);
-     textSize(32);
+     rect(width/2, height/2, 600, 240, 15);
+     fill(0, 140, 0);
+     textSize(28);
      textAlign(CENTER, CENTER);
-     text("🎉 恭喜完成 6 道實戰題！\n最終得分：" + runGame.score, width/2, height/2 - 20);
+     let winText = "🎉 恭喜完成 6 道實戰題！\n最終得分：" + runGame.score;
+     if (isRunningPerfect) winText += "\n\n🏆 獲得成就：醫療小尖兵！";
+     text(winText, width/2, height/2 - 30);
      textSize(20); fill(100);
-     text("比出 🫰 (手指愛心) 再玩一次 | 比出 🤘 (搖滾) 返回", width/2, height/2 + 50);
+     text("比出 🫰 (手指愛心) 再玩一次 | 比出 🤘 (搖滾) 返回", width/2, height/2 + 70);
      if (currentGestures.includes("Heart")) startRunningGame();
      else if (currentGestures.includes("Horns")) toggleJumper();
      rectMode(CORNER);
