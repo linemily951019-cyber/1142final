@@ -304,3 +304,24 @@ canvas {
   background-color: #f57c00;
   transform: scale(1.05);
 }
+
+/* =========================================
+   稱號徽章閃亮特效
+========================================= */
+.badge-sparkle {
+  /* 建立帶有白色亮帶的光澤漸層 */
+  background: linear-gradient(120deg, #fff9c4 30%, #ffffff 50%, #fff9c4 70%);
+  background-size: 200% auto;
+  /* 套用光澤滑過與邊框光暈雙重動畫 */
+  animation: badge-shine 2.5s linear infinite, badge-pulse 2s infinite alternate;
+}
+
+@keyframes badge-shine {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes badge-pulse {
+  0% { box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 0 8px rgba(255, 179, 0, 0.3); }
+  100% { box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 0 20px rgba(255, 179, 0, 0.9); }
+}

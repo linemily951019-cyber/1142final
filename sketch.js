@@ -300,6 +300,10 @@ let isPracticeCompleted = false; // 實戰演練是否完成
 let isRunningCompleted = false; // 奔跑小人是否完成
 let isRunningPerfect = false; // 奔跑小人是否全對
 
+// --- 遊戲倒數與規則介面變數 ---
+let gameCountdown = 0;
+let countdownLastTime = 0;
+
 // --- 實戰演練進階變數 ---
 let stepReady = true; // 防跳格鎖，確保每個步驟間有過渡延遲
 
@@ -541,22 +545,12 @@ function draw() {
     drawRunningGame(consistentGesture, currentGestures);
   }
 
-  // --- 繪製稱號 (左上角) ---
+  // --- 顯示稱號 (與大標題平行) ---
   if (isPracticeCompleted && isRunningCompleted) {
-    push();
-    rectMode(CORNER);
-    fill(255, 215, 0, 230); // 金色半透明背景
-    stroke(255, 140, 0);
-    strokeWeight(3);
-    rect(10, 10, 260, 50, 10);
-    
-    fill(0);
-    noStroke();
-    textSize(22);
-    textAlign(LEFT, CENTER);
-    textStyle(BOLD);
-    text("🎖️ 稱號：基礎醫療專家", 20, 35);
-    pop();
+    let badge = document.getElementById('top-left-badge');
+    if (badge && badge.style.display === 'none') {
+      badge.style.display = 'block'; // 達成條件時將隱藏的 HTML 徽章顯示出來
+    }
   }
 }
 
@@ -619,6 +613,29 @@ function getHandPosture(hand) {
   return "Unknown";
 }
 
+// --- 回首頁邏輯與繪製 ---
+window.returnToHome = function() {
+  // 依據當前模式安全退出並重置背景狀態為教學模式
+  if (currentMode === "PRACTICE") {
+    togglePracticeMode(); 
+  } else if (currentMode === "RUNNING_GAME") {
+    toggleJumper();
+  } else if (currentMode === "PRE_PRACTICE") {
+    currentMode = "TEACHING";
+    document.getElementById('sidebar').style.display = 'flex';
+    document.getElementById('btn-practice').innerText = '實戰演練';
+  }
+  
+  if (isPopupOpen) closePopup();
+
+  // 重新顯示首頁 (漸隱淡入)
+  let landing = document.getElementById("landing-page");
+  landing.style.display = 'flex';
+  setTimeout(() => {
+    landing.style.opacity = '1';
+  }, 50);
+};
+
 // --- 遊戲功能與 UI 控制 ---
 
 window.togglePracticeMode = function() {
@@ -666,10 +683,12 @@ function startRunningGame() {
 
   runGame.currentQIndex = 0;
   runGame.score = 0;
-  runGame.state = "PLAYING";
   runner.x = width / 2;
   gestureHistory = []; // 清空手勢歷史防呆
   loadQuestion();
+  
+  // 💡 必須放在 loadQuestion() 呼叫之後，才能成功將狀態覆蓋為「規則說明」
+  runGame.state = "RULE_EXPLANATION"; 
 }
 
 function loadQuestion() {
@@ -703,7 +722,15 @@ function startPractice(isNextLevel = false) {
   practiceScenario = available[floor(random(available.length))];
   practiceTimeLeft = 30;
   practiceStep = 0;
-  practiceStatus = "PLAYING";
+  
+  if (isNextLevel) {
+    practiceStatus = "COUNTDOWN"; // 繼續通關時跳過規則，直接倒數
+    gameCountdown = 3;
+    countdownLastTime = millis();
+  } else {
+    practiceStatus = "RULE_EXPLANATION"; // 全新開始時先看規則頁面
+  }
+  
   flashRed = 0;
   penaltyCooldown = 0;
   fireworks = [];
@@ -712,22 +739,17 @@ function startPractice(isNextLevel = false) {
   stepReady = true;
   isAngleWrong = false;
   
-  clearInterval(practiceTimer);
-  practiceTimer = setInterval(() => {
-    if (practiceTimeLeft > 0 && practiceStatus === "PLAYING") {
-      practiceTimeLeft--;
-    }
-    if (practiceTimeLeft <= 0 && practiceStatus === "PLAYING") {
-      practiceStatus = "LOST";
-    }
-  }, 1000);
+  clearInterval(practiceTimer); // 移除立即觸發的計時器，等待倒數結束再執行
 }
 
 function retryPractice() {
   // 重新開始目前的關卡 (保留相同的 practiceScenario)
   practiceTimeLeft = 30;
   practiceStep = 0;
-  practiceStatus = "PLAYING";
+  practiceStatus = "COUNTDOWN"; // 重新挑戰時跳過規則，直接倒數
+  gameCountdown = 3;
+  countdownLastTime = millis();
+  
   flashRed = 0;
   penaltyCooldown = 0;
   fireworks = [];
@@ -736,11 +758,7 @@ function retryPractice() {
   stepReady = true;
   isAngleWrong = false;
   
-  clearInterval(practiceTimer);
-  practiceTimer = setInterval(() => {
-    if (practiceTimeLeft > 0 && practiceStatus === "PLAYING") practiceTimeLeft--;
-    if (practiceTimeLeft <= 0 && practiceStatus === "PLAYING") practiceStatus = "LOST";
-  }, 1000);
+  clearInterval(practiceTimer); // 移除立即觸發的計時器
 }
 
 function drawPracticeMode(gestures) {
@@ -748,6 +766,15 @@ function drawPracticeMode(gestures) {
   rectMode(CORNER);
   textAlign(CENTER, CENTER);
   textStyle(NORMAL);
+
+  // 加入規則說明與倒數攔截邏輯
+  if (practiceStatus === "RULE_EXPLANATION") {
+    drawRuleExplanation("PRACTICE");
+    return;
+  } else if (practiceStatus === "COUNTDOWN") {
+    drawCountdown("PRACTICE");
+    return;
+  }
 
   // 紅光閃爍特效
   if (flashRed > 0) {
@@ -1226,6 +1253,15 @@ function drawRunningGame(consistentGesture, currentGestures) {
   fill(100);
   rect(0, 200, width, height - 200);
 
+  // 加入規則說明與倒數攔截邏輯
+  if (runGame.state === "RULE_EXPLANATION") {
+    drawRuleExplanation("RUNNER");
+    return;
+  } else if (runGame.state === "COUNTDOWN") {
+    drawCountdown("RUNNER");
+    return;
+  }
+
   // 畫動態滾動的虛線 (模擬前進速度)
   stroke(255, 150);
   strokeWeight(6);
@@ -1417,6 +1453,83 @@ function checkRunAnswer(chosenLane) {
     runner.isFainting = true;
   }
   runGame.delayStart = millis();
+}
+
+// --- 繪製遊戲規則說明與倒數介面 ---
+function drawRuleExplanation(mode) {
+  push();
+  fill(0, 150);
+  rectMode(CORNER);
+  rect(0, 0, width, height); // 半透明背景遮罩
+
+  rectMode(CENTER);
+  fill(255);
+  rect(width/2, height/2, 600, 400, 15); // 規則框
+
+  fill(0);
+  textSize(32);
+  textStyle(BOLD);
+  textAlign(CENTER, CENTER);
+  let title = mode === "PRACTICE" ? "🚑 實戰演練規則" : "🏃 奔跑小人規則";
+  text(title, width/2, height/2 - 130);
+
+  textStyle(NORMAL);
+  textSize(22);
+  textAlign(LEFT, CENTER);
+  
+  let rulesArr = mode === "PRACTICE" ? 
+    ["1. 系統將隨機抽取一個急救情境。", "2. 🕒 請在 30 秒內依序對著鏡頭做出正確手勢。", "3. ⚠️ 做錯特定手勢會被扣除時間懲罰！"] :
+    ["1. 畫面上方將顯示急救醫療選擇題。", "2. 🖐️ 比出 ☝️(1)、✌️(2)、🤟(3) 切換答案跑道。", "3. 🔋 穩定停留集滿氣條作答，答錯會被扣時！"];
+  
+  for (let i = 0; i < 3; i++) {
+    text(rulesArr[i], width/2 - 220, height/2 - 50 + i * 50);
+  }
+
+  // 按鈕互動效果與繪製
+  rectMode(CENTER);
+  let btnHover = mouseX > width/2 - 100 && mouseX < width/2 + 100 && mouseY > height/2 + 105 && mouseY < height/2 + 155;
+  let btnColor = btnHover ? color(255, 100, 100) : color(220, 50, 50);
+  fill(btnColor);
+  rect(width/2, height/2 + 130, 200, 50, 25);
+  
+  fill(255);
+  textAlign(CENTER, CENTER);
+  textSize(22);
+  textStyle(BOLD);
+  text("我準備好了", width/2, height/2 + 130);
+  pop();
+}
+
+function drawCountdown(mode) {
+  push();
+  fill(0, 150);
+  rectMode(CORNER);
+  rect(0, 0, width, height); // 半透明背景遮罩
+
+  if (millis() - countdownLastTime > 1000) {
+    gameCountdown--;
+    countdownLastTime = millis();
+  }
+
+  if (gameCountdown > 0) {
+    fill(255);
+    textSize(120);
+    textStyle(BOLD);
+    textAlign(CENTER, CENTER);
+    text(gameCountdown, width/2, height/2);
+  } else {
+    if (mode === "PRACTICE") {
+      practiceStatus = "PLAYING";
+      practiceTimer = setInterval(() => {
+        if (practiceTimeLeft > 0 && practiceStatus === "PLAYING") practiceTimeLeft--;
+        if (practiceTimeLeft <= 0 && practiceStatus === "PLAYING") practiceStatus = "LOST";
+      }, 1000);
+    } else if (mode === "RUNNER") {
+      runGame.state = "PLAYING";
+      runGame.lastTime = millis(); // 倒數完畢後才正式開始計算 15 秒
+    }
+  }
+  pop();
 }
 
 // --- 繪製進度條組件 ---
@@ -1628,4 +1741,20 @@ function updatePopupContent() {
 function windowResized() {
   let container = document.getElementById('canvas-container');
   resizeCanvas(container.offsetWidth, container.offsetHeight);
+}
+
+// --- 處理 Canvas 內的點擊事件 ---
+function mousePressed() {
+  // 檢查滑鼠是否在「我準備好了」按鈕範圍內
+  let isBtnHover = mouseX > width/2 - 100 && mouseX < width/2 + 100 && mouseY > height/2 + 105 && mouseY < height/2 + 155;
+  
+  if (currentMode === "PRACTICE" && practiceStatus === "RULE_EXPLANATION" && isBtnHover) {
+    practiceStatus = "COUNTDOWN";
+    gameCountdown = 3;
+    countdownLastTime = millis();
+  } else if (currentMode === "RUNNING_GAME" && runGame.state === "RULE_EXPLANATION" && isBtnHover) {
+    runGame.state = "COUNTDOWN";
+    gameCountdown = 3;
+    countdownLastTime = millis();
+  }
 }

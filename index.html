@@ -36,8 +36,14 @@
       </div>
     </div>
 
+    <!-- 左上角稱號區 (預設隱藏，達成條件後由 JS 顯示) -->
+    <div id="top-left-badge" class="badge-sparkle" style="display: none; position: absolute; top: 15px; left: 20px; z-index: 1000; color: #d84315; border: 3px solid #ffb300; padding: 10px 20px; font-size: 18px; font-weight: bold; border-radius: 8px;">
+      🎖️ 稱號：基礎醫療處置專家
+    </div>
+
     <!-- 右上角按鈕區 -->
     <div id="top-right-buttons">
+      <button id="btn-home" class="top-btn" onclick="returnToHome()">🏠 回首頁</button>
       <button id="btn-practice" class="top-btn" onclick="togglePracticeMode()">實戰演練</button>
       <button id="btn-jumper" class="top-btn" onclick="toggleJumper()">跳躍小人</button>
     </div>
