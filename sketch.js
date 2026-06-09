@@ -10,27 +10,27 @@ const levelData = [
     pages: [
       { 
         action: "1. 清潔的核心原理", 
-        conceptText: "當傷口沾染沙子時，絕對不可直接用手或乾布擦拭，否則粗糙的沙粒會二次刮傷肉芽組織。必須使用大量流動的清水沖洗，利用水流的機械力量將沙子帶走，這是預防傷口化膿與感染最關鍵的第一步。",
+        conceptText: "當傷口沾染沙子時，<b>絕對不可直接用手或乾布擦拭</b>，否則粗糙的沙粒會二次刮傷肉芽組織。必須使用<b>大量流動的清水沖洗</b>，利用水流的機械力量將沙子帶走，這是預防傷口化膿與感染最關鍵的第一步。",
         gesture: "水流沖洗", 
-        text: "請將手掌完全張開，在畫面的水龍頭與傷口之間來回揮動，模擬用流動的清水將傷口上的沙子與髒污徹底沖洗乾淨。" 
+        text: "請將<b>手掌完全張開</b>，在畫面的水龍頭與傷口之間來回揮動，模擬用流動的清水將傷口上的沙子與髒污徹底沖洗乾淨。" 
       },
       { 
         action: "2. 消毒的正確方向", 
-        conceptText: "使用生理食鹽水或優碘消毒時，必須採取「由內向外」的同心圓方式擦拭。如果來回塗抹，會把傷口周圍皮膚的常駐細菌再次帶回微血管破裂的中央核心，反而擴大感染風險。",
+        conceptText: "使用生理食鹽水或優碘消毒時，必須採取<b>「由內向外」的同心圓方式</b>擦拭。如果來回塗抹，會把傷口周圍皮膚的常駐細菌再次帶回微血管破裂的中央核心，反而擴大感染風險。",
         gesture: "由內向外消毒", 
-        text: "請用兩指捏合夾起模擬棉球，對準傷口中心點，以「由內向外」的同心圓方式打圈擦拭消毒。切記不要來回塗抹。" 
+        text: "請用<b>兩指捏合</b>夾起模擬棉球，對準傷口中心點，以<b>「由內向外」的同心圓方式</b>打圈擦拭消毒。切記<b>不要來回塗抹</b>。" 
       },
       { 
         action: "3. 敷藥與保護", 
-        conceptText: "塗抹消炎藥膏（抗生素藥膏）能維持傷口微濕潤環境，加速上皮細胞爬行修復。隨後覆蓋乾淨紗布，是為了阻絕空氣中的微塵與細菌，避免衣服摩擦造成結痂反覆破裂。",
+        conceptText: "塗抹消炎藥膏（抗生素藥膏）能<b>維持傷口微濕潤環境</b>，加速上皮細胞爬行修復。隨後<b>覆蓋乾淨紗布</b>，是為了阻絕空氣中的微塵與細菌，避免衣服摩擦造成結痂反覆破裂。",
         gesture: "塗抹藥膏", 
-        text: "請伸出食指模擬棉籤，在傷口紅腫處輕輕點塗，為傷口塗上一層薄薄的消炎藥膏，隨後畫面將會自動覆蓋上乾淨紗布。" 
+        text: "請<b>伸出食指</b>模擬棉籤，在傷口紅腫處輕輕點塗，為傷口塗上一層薄薄的消炎藥膏，隨後畫面將會自動覆蓋上乾淨紗布。" 
       },
       { 
         action: "4. 網繃固定", 
-        conceptText: "固定敷料是保護傷口的最後一步，能防止紗布脫落並提供適度壓迫，避免組織液過度滲出與遭受二次傷害。",
+        conceptText: "固定敷料是保護傷口的最後一步，能<b>防止紗布脫落並提供適度壓迫</b>，避免組織液過度滲出與遭受二次傷害。",
         gesture: "網繃固定", 
-        text: "請握緊拳頭模擬手持捲軸繃帶，圍繞著傷口周圍順時針繞圈，將紗布緊密固定，保護受傷部位。" 
+        text: "請<b>握緊拳頭</b>模擬手持捲軸繃帶，圍繞著傷口周圍<b>順時針繞圈</b>，將紗布緊密固定，保護受傷部位。" 
       }
     ]
   },
@@ -40,21 +40,21 @@ const levelData = [
     pages: [
       { 
         action: "1. 熱能殘留擴散", 
-        conceptText: "熱水或熱油潑濺到皮膚後，熱能會殘留在皮下組織繼續「悶燒」並向深層擴散。此時必須立刻用 15~20 度的流動冷水持續浸泡或沖洗，迫使微血管收縮、阻斷熱能向真皮層蔓延，這是減輕日後留疤的關鍵。",
+        conceptText: "熱水或熱油潑濺到皮膚後，熱能會殘留在皮下組織繼續「悶燒」並向深層擴散。此時必須立刻用 <b>15~20 度的流動冷水持續浸泡或沖洗</b>，迫使微血管收縮、<b>阻斷熱能向真皮層蔓延</b>，這是減輕日後留疤的關鍵。",
         gesture: "持續降溫", 
-        text: "燙傷發生的黃金時間，請將雙手手掌張開，放入畫面中的冷水盆區域保持靜止不動 5 秒（現實中需持續沖泡 15-30 分鐘），徹底帶走皮下殘留的熱能。" 
+        text: "燙傷發生的黃金時間，請將<b>雙手手掌張開</b>，放入畫面中的冷水盆區域<b>保持靜止不動 5 秒</b>（現實中需持續沖泡 15-30 分鐘），徹底帶走皮下殘留的熱能。" 
       },
       { 
         action: "2. 衣物粘黏危機", 
-        conceptText: "當燙傷部位覆蓋有衣物時，絕對不能強行扯下，因為高溫可能已讓衣物纖維與表皮組織融黏。若用力拉扯會直接撕裂表皮。正確做法是在水中一邊浸泡降溫，一邊用剪刀小心剪開衣物。",
+        conceptText: "當燙傷部位覆蓋有衣物時，<b>絕對不能強行扯下</b>，因為高溫可能已讓衣物纖維與表皮組織融黏。若用力拉扯會直接撕裂表皮。正確做法是<b>在水中一邊浸泡降溫</b>，一邊用<b>剪刀小心剪開衣物</b>。",
         gesture: "剪開衣物", 
-        text: "請用兩指做捏合動作，順着衣物邊緣「極其緩慢」地往外拖曳，模擬用剪刀剪開覆蓋在傷口上的衣物，避免撕扯到脆弱的燙傷表皮。" 
+        text: "請用<b>兩指做捏合動作</b>，順着衣物邊緣<b>「極其緩慢」地往外拖曳</b>，模擬用剪刀剪開覆蓋在傷口上的衣物，避免撕扯到脆弱的燙傷表皮。" 
       },
       { 
         action: "3. 水泡的無菌屏障", 
-        conceptText: "燙傷產生的水泡組織液是身體天然的無菌保護膜。在未受專業醫療評估前絕對不可弄破。一旦水泡破裂，失去表皮保護的真皮層直接暴露，會成為細菌繁殖的溫床。",
+        conceptText: "燙傷產生的水泡組織液是身體<b>天然的無菌保護膜</b>。在未受專業醫療評估前<b>絕對不可弄破</b>。一旦水泡破裂，失去表皮保護的真皮層直接暴露，會成為細菌繁殖的溫床。",
         gesture: "覆蓋保護", 
-        text: "請將雙手手掌平平地向前推，模擬將不沾黏的乾淨紗布平整、輕柔地覆蓋在水泡上，絕對不要用力按壓，以免弄破水泡。" 
+        text: "請將<b>雙手手掌平平地向前推</b>，模擬將不沾黏的乾淨紗布平整、輕柔地覆蓋在水泡上，<b>絕對不要用力按壓</b>，以免弄破水泡。" 
       }
     ]
   },
@@ -64,21 +64,21 @@ const levelData = [
     pages: [
       { 
         action: "1. 內出血與冰敷原理", 
-        conceptText: "扭傷（俗稱翻船）的瞬間，關節周圍的韌帶與微血管會發生撕裂傷。急性期（24-48小時內）患處會因內出血而劇烈腫脹。此時冰敷能使局部血管收縮、減少出血量，並麻痺神經以達到止痛效果。",
+        conceptText: "扭傷（俗稱翻船）的瞬間，關節周圍的韌帶與微血管會發生撕裂傷。急性期（24-48小時內）患處會因內出血而劇烈腫脹。此時<b>冰敷能使局部血管收縮、減少出血量</b>，並麻痺神經以達到止痛效果。",
         gesture: "間歇冰敷", 
-        text: "請握緊拳頭模擬冰袋，對準紅腫的關節處定點按壓，在畫面上停留 3 秒後放開，重複三次。透過間歇性冰敷來收縮微血管。" 
+        text: "請<b>握緊拳頭</b>模擬冰袋，對準紅腫的關節處<b>定點按壓</b>，在畫面上停留 3 秒後放開，重複三次。透過間歇性冰敷來收縮微血管。" 
       },
       { 
         action: "2. 八字包紮的支撐力", 
-        conceptText: "急性扭傷後，受損的關節失去了原本韌帶的穩定度。使用彈性繃帶進行「八字形纏繞包紮」，能提供外在的物理支撐力，限制關節產生不正常的左右晃動，預防二次韌帶撕裂。",
+        conceptText: "急性扭傷後，受損的關節失去了原本韌帶的穩定度。使用彈性繃帶進行<b>「八字形纏繞包紮」</b>，能<b>提供外在的物理支撐力</b>，限制關節產生不正常的左右晃動，預防二次韌帶撕裂。",
         gesture: "八字加壓支撐", 
-        text: "請雙手握拳，在關節周圍交替上下揮動，模擬使用彈性繃帶以「八字形法」緊密纏繞腳踝，為受損的關節建立穩固的支撐防護。" 
+        text: "請<b>雙手握拳</b>，在關節周圍交替上下揮動，模擬使用彈性繃帶以<b>「八字形法」緊密纏繞</b>腳踝，為受損的關節建立穩固的支撐防護。" 
       },
       { 
         action: "3. 重力與血液回流", 
-        conceptText: "受傷的肢體如果一直垂放，血液與組織液會因為重力大量淤積在最底端，導致腫脹加劇。將患處抬高並超過心臟高度，能利用物理重力引流，促進靜脈血液順暢回流，有效緩減局部腫脹。",
+        conceptText: "受傷的肢體如果一直垂放，血液與組織液會因為重力大量淤積在最底端，導致腫脹加劇。將患處<b>抬高並超過心臟高度</b>，能利用物理重力引流，<b>促進靜脈血液順暢回流</b>，有效緩減局部腫脹。",
         gesture: "重力抬高", 
-        text: "請將手掌朝上，緩慢地向上抬起，這代表在現實中用枕頭或墊子把受傷的腳墊高，使其高度超過心臟，幫助血液回流、消除腫脹。" 
+        text: "請將<b>手掌朝上，緩慢地向上抬起</b>，這代表在現實中用枕頭或墊子把受傷的腳墊高，使其<b>高度超過心臟</b>，幫助血液回流、消除腫脹。" 
       }
     ]
   },
@@ -88,15 +88,15 @@ const levelData = [
     pages: [
       { 
         action: "1. 順向拔除的力學", 
-        conceptText: "木屑或玻璃扎入皮膚時是有特定角度的。如果盲目垂直硬拔、或者抓取角度歪斜，脆弱的木屑極易在皮下直接折斷，導致殘留碎屑留在真皮層中，引發嚴重的異物肉芽腫或蜂窩性組織炎。",
+        conceptText: "木屑或玻璃扎入皮膚時是有<b>特定角度</b>的。如果<b>盲目垂直硬拔</b>、或者抓取角度歪斜，脆弱的木屑極易在皮下直接折斷，導致殘留碎屑留在真皮層中，引發嚴重的異物肉芽腫或蜂窩性組織炎。",
         gesture: "順向夾取", 
-        text: "請用兩指捏合夾住木屑尾端，向外拉出即可模擬順向拔除異物。" 
+        text: "請用<b>兩指捏合</b>夾住木屑尾端，向外拉出即可模擬<b>順向拔除</b>異物。" 
       },
       { 
         action: "2. 嚴禁盲目擠壓", 
-        conceptText: "很多人在扎到木屑時會下意識用力擠壓傷口周圍。這個動作非常危險，因為手指施加的向內壓力，極有可能將尚未拔出的異物推得更深，甚至刺破更深層的血管或神經。",
+        conceptText: "很多人在扎到木屑時會下意識用力擠壓傷口周圍。這個動作非常危險，因為手指施加的向內壓力，極有可能<b>將尚未拔出的異物推得更深</b>，甚至刺破更深層的血管或神經。",
         gesture: "局部加壓止血", 
-        text: "異物順利拔出後，請豎起大拇指對準鏡頭，在傷口判定區用力按壓 3 秒鐘。這是模擬用乾淨棉球進行局部直接加壓，讓受損的微血管快速凝血。" 
+        text: "異物順利拔出後，請<b>豎起大拇指</b>對準鏡頭，在傷口判定區<b>用力按壓 3 秒鐘</b>。這是模擬用乾淨棉球進行<b>局部直接加壓</b>，讓受損的微血管快速凝血。" 
       }
     ]
   },
@@ -106,15 +106,15 @@ const levelData = [
     pages: [
       { 
         action: "1. 頭部後仰的窒息危機", 
-        conceptText: "傳統觀念認為流鼻血要將頭往後仰，這是完全錯誤且致命的。頭後仰並不能止血，反而會使鼻血沿著後鼻孔流向咽喉。這可能導致血液吞入胃部引發劇烈嘔吐，更嚴重者會誤入氣管導致窒息或吸入性肺炎。",
+        conceptText: "傳統觀念認為流鼻血要將頭往後仰，這是<b>完全錯誤且致命的</b>。頭後仰並不能止血，反而會使鼻血沿著後鼻孔流向咽喉。這可能導致血液吞入胃部引發劇烈嘔吐，更嚴重者會<b>誤入氣管導致窒息或吸入性肺炎</b>。",
         gesture: "引導低頭姿勢", 
-        text: "請將雙手張開平放在下巴下方，隨後緩慢向下移動，引導畫面中的角色將頭部向前傾、微微低頭，確保鼻血順暢流出，不會倒流進喉嚨。" 
+        text: "請將<b>雙手張開平放在下巴下方，隨後緩慢向下移動</b>，引導畫面中的角色將頭部<b>向前傾、微微低頭</b>，確保鼻血順暢流出，不會倒流進喉嚨。" 
       },
       { 
         action: "2. 直接壓迫鼻翼", 
-        conceptText: "流鼻血最常見的出血點位於鼻中膈前下方的「李氏區（Kiesselbach's plexus）」，該處微血管密集成網。正確止血法是直接用手指施壓於兩側軟骨處（鼻翼），直接對出血點進行物理加壓。",
+        conceptText: "流鼻血最常見的出血點位於鼻中膈前下方的「李氏區（Kiesselbach's plexus）」，該處微血管密集成網。正確止血法是<b>直接用手指施壓於兩側軟骨處（鼻翼）</b>，直接對出血點進行物理加壓。",
         gesture: "直接加壓止血", 
-        text: "請在畫面中央的鼻子區域做出捏緊的手勢，保持不動 5 秒鐘（現實中需持續捏住10分鐘）。此時請提醒自己改用嘴巴進行呼吸。" 
+        text: "請在畫面中央的鼻子區域做出<b>捏緊的手勢</b>，保持不動 5 秒鐘（現實中需持續捏住10分鐘）。此時請提醒自己<b>改用嘴巴進行呼吸</b>。" 
       }
     ]
   },
@@ -124,15 +124,15 @@ const levelData = [
     pages: [
       { 
         action: "1. 毒囊的二次注射", 
-        conceptText: "蜜蜂螫人後，殘留在皮膚上的蜂針後端連接著一個「活體毒囊」。如果此時直接用手指或鑷子去捏拔蜂針，外力擠壓會如同按壓針筒一般，將毒囊內殘留的全部毒液瞬間一次性注入皮下，加劇中毒症狀。",
+        conceptText: "蜜蜂螫人後，殘留在皮膚上的蜂針後端連接著一個「活體毒囊」。如果此時<b>直接用手指或鑷子去捏拔</b>蜂針，外力擠壓會如同按壓針筒一般，將毒囊內殘留的全部毒液<b>瞬間一次性注入皮下</b>，加劇中毒症狀。",
         gesture: "卡片平刮蜂針", 
-        text: "絕對不要用捏的！請將手掌繃緊、指尖朝上化身為硬卡片，貼近畫面中的傷口表面，由左向右橫向平平地刮過去，將蜂針與連帶的毒囊安全剔除。" 
+        text: "<b>絕對不要用捏的！</b>請將<b>手掌繃緊、指尖朝上</b>化身為硬卡片，貼近畫面中的傷口表面，由左向右<b>橫向平平地刮過去</b>，將蜂針與連帶的毒囊安全剔除。" 
       },
       { 
         action: "2. 硬卡片刮除法與冷敷", 
-        conceptText: "面對殘留的蜂針，正確做法是使用具備硬度的邊緣（如健保卡、信用卡），貼緊皮膚表面，採用「橫向平刮」的方式。移除蜂針後敷上冰袋可減緩毒液吸收速度並舒緩紅腫。",
+        conceptText: "面對殘留的蜂針，正確做法是使用<b>具備硬度的邊緣</b>（如健保卡、信用卡），貼緊皮膚表面，採用<b>「橫向平刮」</b>的方式。移除蜂針後敷上冰袋可減緩毒液吸收速度並舒緩紅腫。",
         gesture: "冷敷舒緩減毒", 
-        text: "蜂針移除了！請雙手握拳，在紅腫的患處上方連續做向下輕點的動作。這代表在現實中為傷口敷上冰袋，利用低溫減緩局部血液循環，降低毒液在體內的擴散速度。" 
+        text: "蜂針移除了！請<b>雙手握拳</b>，在紅腫的患處上方連續做<b>向下輕點</b>的動作。這代表在現實中為傷口<b>敷上冰袋</b>，利用低溫減緩局部血液循環，降低毒液在體內的擴散速度。" 
       }
     ]
   }
@@ -294,6 +294,7 @@ let fireworks = [];
 let playedScenarios = []; // 紀錄已經玩過的關卡，達成成就用
 let practiceProgress = 0; // 進度條百分比 (0~100)
 let stepCompleteDelay = 0; // 步驟完成後的文字停留延遲計時
+let prePracticeStuckTimer = 0; // 測前練習卡關計時器
 let isAngleWrong = false; // 紀錄異物刺傷的拔除角度是否歪掉
 let isPracticeCompleted = false; // 實戰演練是否完成
 let isRunningCompleted = false; // 奔跑小人是否完成
@@ -310,6 +311,15 @@ const PRACTICE_SCENARIOS = [
   { name: "猛烈流鼻血", tasks: ["雙手手掌向下平移 (低頭)", "單手捏合維持中心 (捏鼻)"], gestures: ["OpenHand", "Pinch"] },
   { name: "昆蟲螫傷", tasks: ["手掌平直橫向刷過去 (刮除)", "雙手握拳連續上下輕點 (冷敷)"], gestures: ["OpenHand", "Fist"] }
 ];
+
+// --- 視覺提示手勢資料庫 ---
+const GESTURE_EMOJIS = {
+  "OpenHand": "✋ (手掌張開)",
+  "Pinch": "🤏 (兩指捏合)",
+  "Point": "☝️ (伸出食指)",
+  "Fist": "✊ (握緊拳頭)",
+  "ThumbsUp": "👍 (豎起大拇指)"
+};
 
 // 手勢防連續觸發計時器
 let gestureCooldown = 0;
@@ -507,6 +517,8 @@ function draw() {
     }
   } else if (currentMode === "PRACTICE") {
     drawPracticeMode(currentGestures);
+  } else if (currentMode === "PRE_PRACTICE") {
+    drawPrePracticeMode(currentGestures);
   } else if (currentMode === "RUNNING_GAME") {
     let currentPos = "Unknown";
     if (currentGestures.length > 0) currentPos = currentGestures[0];
@@ -536,14 +548,14 @@ function draw() {
     fill(255, 215, 0, 230); // 金色半透明背景
     stroke(255, 140, 0);
     strokeWeight(3);
-    rect(20, 20, 260, 50, 10);
+    rect(10, 10, 260, 50, 10);
     
     fill(0);
     noStroke();
     textSize(22);
     textAlign(LEFT, CENTER);
     textStyle(BOLD);
-    text("🎖️ 稱號：基礎醫療專家", 30, 45);
+    text("🎖️ 稱號：基礎醫療專家", 20, 35);
     pop();
   }
 }
@@ -786,10 +798,29 @@ function drawPracticeMode(gestures) {
       }
     }
 
-    fill(0);
     textSize(20);
-    let taskText = `步驟 ${practiceStep + 1}/${scenario.tasks.length}：請做出 [${scenario.tasks[practiceStep]}]`;
-    text(taskText, width/2, 115);
+    let part1 = `步驟 ${practiceStep + 1}/${scenario.tasks.length}：請做出 `;
+    let part2 = `[${scenario.tasks[practiceStep]}]`;
+    
+    textStyle(NORMAL);
+    let w1 = textWidth(part1);
+    textStyle(BOLD);
+    let w2 = textWidth(part2);
+    let totalW = w1 + w2;
+    let startX = width/2 - totalW/2;
+    
+    textAlign(LEFT, CENTER);
+    fill(0);
+    textStyle(NORMAL);
+    text(part1, startX, 115);
+    
+    fill(220, 0, 0); // 紅色粗體
+    textStyle(BOLD);
+    text(part2, startX + w1, 115);
+    
+    // 恢復置中對齊
+    textAlign(CENTER, CENTER);
+    textStyle(NORMAL);
 
     // 【2. 放寬手勢判定 (只要任何一隻手符合即可，不再強制鎖定單手或幀數)】
     let hasTarget = (g) => gestures.includes(g);
@@ -900,6 +931,190 @@ function drawPracticeMode(gestures) {
     } else if (gestures.includes("Horns")) {
       togglePracticeMode();
     }
+  }
+}
+
+// --- 啟動測前練習模式 ---
+window.startPrePractice = function() {
+  currentMode = "PRE_PRACTICE";
+  document.getElementById('sidebar').style.display = 'none';
+  document.getElementById('btn-practice').innerText = '實戰演練';
+  document.getElementById('btn-jumper').innerText = '奔跑小人';
+  closePopup();
+  
+  practiceScenario = currentLevel; // 鎖定為當前教學視窗的關卡
+  practiceStep = 0;
+  practiceStatus = "PLAYING";
+  practiceProgress = 0;
+  stepCompleteDelay = 0;
+  stepReady = true;
+  flashRed = 0;
+  penaltyCooldown = 0;
+  prePracticeStuckTimer = 0; // 重置卡關計時器
+  fireworks = [];
+  
+  clearInterval(practiceTimer); // 確保沒有實戰計時器干擾
+};
+
+// --- 繪製測前練習模式 (無壓力、放慢進度、加入視覺提示) ---
+function drawPrePracticeMode(gestures) {
+  rectMode(CORNER);
+  textAlign(CENTER, CENTER);
+  textStyle(NORMAL);
+
+  if (flashRed > 0) {
+    fill(255, 0, 0, 80);
+    noStroke();
+    rect(0, 0, width, height);
+    flashRed--;
+  }
+
+  fill(255, 230);
+  noStroke();
+  let boxHeight = (practiceStatus === "WON") ? 180 : 320; // 加高框體以容納手勢提示
+  rect(width/2 - 350, 20, 700, boxHeight, 15);
+  
+  let scenario = PRACTICE_SCENARIOS[practiceScenario];
+  
+  fill(0);
+  textSize(28);
+  text("💪 測前手勢練習：" + scenario.name, width/2, 50);
+  
+  if (practiceStatus === "PLAYING") {
+    textSize(20);
+    fill(0, 150, 150);
+    text("（無時間限制，進度條稍慢，請放輕鬆慢慢熟悉手勢！）", width/2, 85);
+    
+    let texts = getScenarioText(practiceScenario, practiceStep, practiceProgress);
+
+    if (!stepReady) {
+      if (stepCompleteDelay > 0) {
+        stepCompleteDelay--;
+        prePracticeStuckTimer = 0; // 過渡期間不計算卡關
+        fill(0, 150, 0);
+        textSize(24);
+        text(texts.c, width/2, 260); // 配合框體拉高往下移
+        drawProgressBar(100, texts.p, true);
+        return; 
+      } else {
+        practiceStep++;
+        practiceProgress = 0;
+        stepReady = true;
+        if (practiceStep >= scenario.tasks.length) {
+          practiceStatus = "WON";
+        }
+        return;
+      }
+    }
+
+    textSize(20);
+    let part1 = `步驟 ${practiceStep + 1}/${scenario.tasks.length}：請做出 `;
+    let part2 = `[${scenario.tasks[practiceStep]}]`;
+    
+    textStyle(NORMAL);
+    let w1 = textWidth(part1);
+    textStyle(BOLD);
+    let w2 = textWidth(part2);
+    let totalW = w1 + w2;
+    let startX = width/2 - totalW/2;
+    
+    textAlign(LEFT, CENTER);
+    fill(0);
+    textStyle(NORMAL);
+    text(part1, startX, 115);
+    
+    fill(220, 0, 0); // 紅色粗體
+    textStyle(BOLD);
+    text(part2, startX + w1, 115);
+    
+    // 恢復置中對齊
+    textAlign(CENTER, CENTER);
+    textStyle(NORMAL);
+    
+    // 💡 視覺化手勢提示
+    let requiredGesture = scenario.gestures[practiceStep];
+    let hintStr = GESTURE_EMOJIS[requiredGesture] || "🖐️";
+    fill(0, 102, 204);
+    textSize(30);
+    text("視覺提示：" + hintStr, width/2, 260);
+
+    let hasTarget = (g) => gestures.includes(g);
+    let isPinch = hasTarget("Pinch") || hasTarget("OK");
+
+    let progressInc = 0;
+
+    // 放慢進度條的累積速度 (將原本的 +2 / +2.5 砍半)
+    if (gestures.length > 0) {
+      switch (practiceScenario) {
+        case 0:
+          if (practiceStep === 0 && hasTarget("OpenHand")) progressInc = 1;
+          else if (practiceStep === 1 && isPinch) progressInc = 1;
+          else if (practiceStep === 2 && hasTarget("Point")) progressInc = 1.25;
+          else if (practiceStep === 3 && hasTarget("Fist")) progressInc = 1;
+          break;
+        case 1:
+          if (practiceStep === 0 && hasTarget("OpenHand")) progressInc = 1;
+          else if (practiceStep === 1 && isPinch) progressInc = 1;
+          else if (practiceStep === 2 && hasTarget("OpenHand")) progressInc = 1;
+          break;
+        case 2:
+          if (practiceStep === 0 && hasTarget("Fist")) progressInc = 1;
+          else if (practiceStep === 1 && hasTarget("Fist")) progressInc = 1;
+          else if (practiceStep === 2 && hasTarget("OpenHand")) progressInc = 1;
+          break;
+        case 3:
+          if (practiceStep === 0 && isPinch) progressInc = 1;
+          else if (practiceStep === 1 && hasTarget("ThumbsUp")) progressInc = 1;
+          break;
+        case 4:
+          if (practiceStep === 0 && hasTarget("OpenHand")) progressInc = 1;
+          else if (practiceStep === 1 && isPinch) progressInc = 1;
+          break;
+        case 5:
+          if (practiceStep === 0 && hasTarget("OpenHand")) progressInc = 1;
+          else if (practiceStep === 1 && hasTarget("Fist")) progressInc = 1;
+          break;
+      }
+    }
+
+    if (progressInc > 0) {
+      prePracticeStuckTimer = 0; // 有累積進度就重置卡關計時器
+      practiceProgress += progressInc;
+      if (practiceProgress >= 100) {
+        practiceProgress = 100;
+        stepReady = false; 
+        stepCompleteDelay = 90; 
+      }
+    } else {
+      prePracticeStuckTimer++; // 沒有進展時持續計時
+      if (penaltyCooldown === 0 && gestures.length > 0) {
+        // 若動作錯誤提供極輕微的視覺回饋 (不扣時)，避免玩家不知道沒對到
+        if (frameCount % 60 === 0) flashRed = 10;
+      }
+    }
+    
+    // 💡 卡關提示：如果超過 180 幀 (約 3 秒) 沒有累積進度，顯示提示字樣
+    if (prePracticeStuckTimer > 180) {
+      fill(220, 80, 80);
+      textSize(18);
+      text("💡 偵測不到手勢？試著將手放遠一點或調整角度！", width/2, 300);
+    }
+
+    drawProgressBar(practiceProgress, texts.p, false, false, "");
+  } else if (practiceStatus === "WON") {
+    fill(0, 150, 0);
+    textSize(32);
+    text("✨ 練習完成！您的手勢非常標準 ✨", width/2, 90);
+    fill(0);
+    textSize(20);
+    text("比出 🤘 (搖滾) 返回教學面板", width/2, 150);
+    
+    if (gestures.includes("Horns")) {
+      currentMode = "TEACHING";
+      document.getElementById('sidebar').style.display = 'flex';
+      openPopup(practiceScenario); // 自動開回剛才練習的教學視窗
+    }
+    drawFireworks();
   }
 }
 
@@ -1304,17 +1519,67 @@ function drawFireworks() {
 }
 // --- HTML UI 控制邏輯 ---
 
+// --- 首頁指南資料庫 ---
+const GUIDE_DATA = {
+  "WEB": {
+    title: "🌐 網頁說明",
+    content: "歡迎來到「急救醫療手勢教學系統」！<br><br>本網站分為三大模式：<br>1. <b>教學模式</b>：學習各種傷口的正確處理方式。<br>2. <b>實戰演練</b>：模擬真實緊急情況，考驗您的手勢應變能力。<br>3. <b>奔跑小人</b>：趣味問答小遊戲，驗收您的醫療知識。<br><br>請確保您的視訊鏡頭已開啟，並在光線充足的環境下進行操作以確保最佳辨識效果。"
+  },
+  "PRACTICE": {
+    title: "🚑 實戰測驗說明",
+    content: "<b>【如何進行】</b><br>系統會隨機抽取一個急救情境，您必須在 30 秒的時限內，依序對著鏡頭做出正確的急救處理手勢。<br><br><b>【評斷標準】</b><br>✔️ <b>準確度</b>：畫面下方會有進度條，維持正確手勢即可累積進度。<br>❌ <b>懲罰機制</b>：如果做錯特定手勢（例如昆蟲螫傷時誤用捏合手勢），系統將會判定嚴重失誤並扣除秒數！<br>🏆 <b>通關條件</b>：在時間歸零前完成所有步驟即可成功救援。"
+  },
+  "RUNNER": {
+    title: "🏃 奔跑小人測驗說明",
+    content: "<b>【小遊戲玩法】</b><br>這是一個結合知識與反應的跑酷問答遊戲！畫面上方會出現急救醫療問題，您必須引導小人跑向正確的答案跑道。<br><br><b>【關鍵手勢操作】</b><br>☝️ <b>比出 1 (單伸食指)</b>：移動到<b>左跑道</b><br>✌️ <b>比出 2 (YA)</b>：移動到<b>中跑道</b><br>🤟 <b>比出 3 (三指)</b>：移動到<b>右跑道</b><br><br><b>【特別注意：彈性變換】</b><br>在倒數計時（15秒）結束前，您<b>可以根據題目隨時改變手勢與答案</b>！小人會隨之左右移動。直到倒數結束或集氣條滿時，才會鎖定最終停留在的跑道進行結算。答對獲得分數，答錯則會被扣除 3 秒！"
+  },
+  "GESTURE": {
+    title: "🖐️ 全網站手勢操作說明",
+    content: "為了讓系統準確辨識，請確保手部完整出現在鏡頭畫面中：<br><br>👌 <b>OK手勢</b>：教學模式中控制上一頁/下一頁/關閉。<br>✋ <b>布 (手掌張開)</b>：用於清洗、降溫、低頭等動作。<br>🤏 <b>捏合</b>：用於夾取異物、脫除衣物、捏住鼻翼。<br>☝️ <b>單指 (食指)</b>：用於定點塗藥。<br>✊ <b>拳頭</b>：用於冰敷、包紮固定。<br>🫰 <b>手指愛心</b>：重新挑戰失敗的實戰關卡。<br>✌️ <b>比耶手勢</b>：完成一關後繼續進行下一關。<br>🤘 <b>搖滾手勢</b>：實戰結束後返回主選單。"
+  }
+};
+
+window.openGuidePopup = function(guideType) {
+  isPopupOpen = true;
+  let popup = document.getElementById('instruction-popup');
+  popup.classList.remove('hidden');
+  popup.style.zIndex = '99999'; // 確保彈出視窗突破首頁覆蓋層，顯示在最前面
+  
+  let data = GUIDE_DATA[guideType];
+  let contentHtml = `
+    <h2>${data.title}</h2>
+    <hr>
+    <p style="color: #333; font-size: 16px; line-height: 1.8; text-align: left; padding: 10px;">${data.content}</p>
+    <br>
+    <div style="text-align: center;">
+      <button onclick="closePopup()" style="padding: 10px 20px; font-size: 18px; border-radius: 10px; cursor: pointer; background: #0078b4; color: white; border: none; font-weight: bold;">我知道了</button>
+    </div>
+  `;
+  document.getElementById('popup-content').innerHTML = contentHtml;
+  
+  // 隱藏教學模式專用的導覽元素 (上一頁/下一頁)
+  let controls = document.getElementById('popup-controls');
+  if (controls) controls.style.display = 'none';
+};
+
 window.openPopup = function(levelIdx) {
   currentLevel = levelIdx;
   currentPage = 0;
   isPopupOpen = true;
   document.getElementById('instruction-popup').classList.remove('hidden');
+  
+  // 確保進入教學模式時，導覽元素正常顯示
+  let controls = document.getElementById('popup-controls');
+  if (controls) controls.style.display = '';
+  
   updatePopupContent();
 };
 
 window.closePopup = function() {
   isPopupOpen = false;
-  document.getElementById('instruction-popup').classList.add('hidden');
+  let popup = document.getElementById('instruction-popup');
+  popup.classList.add('hidden');
+  popup.style.zIndex = ''; // 關閉時重置層級，避免影響後續主遊戲畫面的排版
 };
 
 window.nextPage = function() {
@@ -1347,6 +1612,9 @@ function updatePopupContent() {
     <p style="color: #444; font-size: 15px; line-height: 1.6; margin-bottom: 15px;"><strong>💡 原理：</strong>${page.conceptText || ""}</p>
     <h4>🎯 核心手勢：${page.gesture}</h4>
     <p style="color: #111; font-size: 15px; line-height: 1.6;">${page.text.replace(/\n/g, '<br>')}</p>
+    <div style="text-align: center; margin-top: 20px;">
+      <button onclick="startPrePractice()" style="padding: 10px 25px; font-size: 18px; font-weight: bold; background-color: #4caf50; color: white; border: 2px solid #388e3c; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">💪 測前手勢練習</button>
+    </div>
   `;
   
   document.getElementById('popup-content').innerHTML = contentHtml;
